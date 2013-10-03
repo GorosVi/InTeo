@@ -1,0 +1,142 @@
+
+\usepackage{amsmath,amssymb}
+\usepackage{indentfirst}%may be redeclared in titlesec
+%\usepackage{longtable}
+
+% Use with XeTeX
+\usepackage{xltxtra}
+\usepackage{polyglossia}
+\setsansfont{Calibri}
+\setmonofont{Courier New}
+\setmainfont{Calibri}
+\setdefaultlanguage[spelling=modern]{russian}
+\setotherlanguage{english}
+
+% При портировании на другое оформление сохранять обязательно!
+\newcommand{\eset}{\varnothing}
+\newcommand{\sudots}{\,\ldots\,}
+\newcommand{\sstrut}{\rule{0pt}{10mm}}
+\renewcommand{\phi}{\varphi}
+\renewcommand{\le}{\leqslant}
+\renewcommand{\ge}{\geqslant}
+\renewcommand{\kappa}{\varkappa}
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand*{\term}[1]{\textbf{#1}}
+\newcommand*{\rtask}[1]{\bigskip\textbf{#1}}
+\newcommand*{\task}[1]{\pagebreak[2]\bigskip\textbf{#1}}
+\newcommand*{\comm}[1]{\pagebreak[2]\bigskip\textbf{#1}}
+\newcommand*{\sample}[1]{\pagebreak[2]\bigskip\textbf{#1}}
+\newcommand*{\stitle}[1]{\pagebreak[3] \bigskip\textbf{#1}}
+\newcommand*{\wdate}[1]{\pagebreak[3]\bigskip{
+\large$\blacktriangleleft$\raisebox{-1pt}
+{\,\textbf{#1}\,}}$\blacktriangleright$}
+%-------------------------------------------------------------
+
+\newcommand{\GTitle}{Отчёт о курсовой работе по дисциплине}
+\newcommand{\GCaption}{"Языки программирования"}
+\newcommand{\GGTitle}{На тему}
+\newcommand{\GGCaption}{"Разработка и тестирование классов"}
+\newcommand{\GAuthor}{Author}
+\newcommand{\GReviewer}{Rewiever}
+\newcommand{\GDate}{\today}
+
+\renewcommand{\maketitle}{
+	\begin{titlepage}
+	\thispagestyle{title}
+	\begin{center}
+		{\small Министерство образования и науки Российской Федерации \\
+		Федеральное государственное бюджетное образовательное учреждение\\[-2pt]
+		высшего профессионального образования}\\[10pt]
+		\textbf{Санкт-Петербургский национальный исследовательский университет}\\
+		\rule{13cm}{1pt}\\[5pt]
+		\textbf{информационных технологий, механики и оптики}\\[10pt]
+		{\small \mbox{\hbox {Факультет \hfil Компьютерных \hfil технологий \hfil и \hfil управления}}\\[-2pt]%to 9.27 cm 
+		Кафедра ПБКС}
+	\vfill
+	%\vspace{-1.50cm}
+		\Large \GTitle \\[0.0cm]
+		\LARGE \textbf{\GCaption}\\[1cm]
+		\Large \GGTitle \\[0.0cm]
+		\LARGE \textbf{\GGCaption}\\
+	\vfill
+	\end{center}
+
+	\hspace{-0.35cm}
+	\vbox{\begin{tabbing}
+	Выполнилм \=\hspace{12.10cm}\=\hspace{1.5cm}\kill
+	Выполнил:\>\GAuthor\>\rule{1.5cm}{0.0pt}\\
+	Проверил:\>\GReviewer\>\rule{1.5cm}{0.0pt}\\
+	\end{tabbing}
+	\vspace{-1.50cm}}
+	\pagebreak
+	\end{titlepage}
+	\setcounter{page}{2}
+}
+
+\newcommand{\maketoc}{
+\renewcommand{\@dotsep}{10000}
+
+
+\tableofcontents
+\pagebreak
+}
+% Common settings
+\parskip = \bigskipamount
+\parindent=-0.50cm
+%\hfuzz=2.5pt
+%\emergencystretch=25pt
+%\tolerance 5000
+%\renewcommand{\baselinestretch}{1.25}
+
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{3}
+
+% Margins - a4paper 210x297
+\hoffset = -1in
+\voffset = -1in
+\topmargin = 1.5 cm
+\textheight = 26cm
+\textwidth = 15cm
+\headheight = 0pt
+\headsep = 0pt
+\oddsidemargin = 4cm
+\evensidemargin = 2.80cm
+%\usepackage{geometry}
+%\geometry{left=3.00cm}
+%\geometry{right=2.00cm}
+%\geometry{top=1.75cm}
+%\geometry{bottom=1.75cm}
+
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrule}{}
+\renewcommand{\footrule}{\vbox to 0pt{ \hbox to \headwidth{\hspace{-0.90cm}{\leaders\hrule height 1pt \hfill}\hspace{-0.125cm}} \vss}}
+\fancyfoot[RO]{\thepage}
+\fancyfoot[LE]{\hspace{-0.75cm}\thepage}
+\fancypagestyle{plain}{\fancyhead{} \renewcommand{\headrule}{}}
+\fancypagestyle{title}{\fancyhf{} \renewcommand{\headrule}{} \fancyfoot[R]{Санкт-Петербург, 2013}\fancyfoot[L]{\hspace{-0.75cm}\small\fontspec{Times New Roman}\raisebox{2pt}{\XeTeX}}}
+
+\usepackage{titlesec}
+\titleformat{\section}[block]{\bfseries\huge}{\arabic{section}.}{1ex}{}
+\titleformat{\subsection}[block]{\bfseries\LARGE}{\arabic{section}.\arabic{subsection}.}{1ex}{}
+\titleformat{\subsubsection}[block]{\Large}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.}{1ex}{}
+\titleformat{\paragraph}[block]{\large}{}{1ex}{}
+\titleformat{\subparagraph}[block]{\large}{}{1ex}{}
+\titlespacing*{\section}{-0.75cm}{3.25ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titlespacing*{\subsection}{-0.75cm}{3.25ex plus 1ex minus .2ex}{0.0ex plus .2ex}
+\titlespacing*{\subsubsection}{-0.75cm}{3.0ex plus 1ex minus .2ex}{0.0ex plus .2ex}
+\titlespacing*{\paragraph}{-0.75cm}{3.0ex plus 1ex minus .2ex}{0.0ex plus .2ex}
+\titlespacing*{\subparagraph}{-0.75cm}{3.0ex plus 1ex minus .2ex}{0.0ex plus .2ex}
+
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+\renewcommand{\theenumii}{.\arabic{enumii}}
+\renewcommand{\theenumiii}{.\arabic{enumiii}}
+\renewcommand{\labelenumii}{\labelenumi\arabic{enumii}.}
+\renewcommand{\labelenumiii}{\labelenumii\arabic{enumiii}.}
+
+\renewcommand{\labelitemi}{\normalfont\bfseries{$\bullet$}}
+\renewcommand{\labelitemii}{\normalfont\bfseries{$\circ$}}
+\renewcommand{\labelitemiii}{\normalfont\bfseries{$\star$}}
