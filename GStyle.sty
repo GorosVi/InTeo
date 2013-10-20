@@ -8,7 +8,7 @@
 \usepackage{xltxtra}
 \usepackage{polyglossia}
 \setsansfont{Calibri}
-\setmonofont{Courier New}
+\setmonofont{Consolas}
 \setmainfont{Calibri}
 \setdefaultlanguage[spelling=modern]{russian}
 \setotherlanguage{english}
@@ -38,98 +38,139 @@
 \newcommand{\GGTitle}{На тему}
 \newcommand{\GGCaption}{"Разработка и тестирование классов"}
 \newcommand{\GAuthor}{Author}
-\newcommand{\GReviewer}{Rewiever}
+\newcommand{\GReviewer}{Reviewer}
 \newcommand{\GDate}{\today}
 
 \renewcommand{\maketitle}{
 	\begin{titlepage}
 	\thispagestyle{title}
+	%\hspace{-1cm}
+	
+	
 	\begin{center}
-		{\small Министерство образования и науки Российской Федерации \\
-		Федеральное государственное бюджетное образовательное учреждение\\[-2pt]
-		высшего профессионального образования}\\[10pt]
-		\textbf{Санкт-Петербургский национальный исследовательский университет}\\
-		\rule{13cm}{1pt}\\[5pt]
-		\textbf{информационных технологий, механики и оптики}\\[10pt]
-		{\small \mbox{\hbox {Факультет \hfil Компьютерных \hfil технологий \hfil и \hfil управления}}\\[-2pt]%to 9.27 cm 
-		Кафедра ПБКС}
+		{\small\hspace{-1cm} Министерство образования и науки Российской Федерации \\
+		\hspace{-1cm} Федеральное государственное бюджетное образовательное учреждение\\[-2pt]
+		\hspace{-1cm} высшего профессионального образования}\\[10pt]
+		\hspace{-1cm} \textbf{Санкт-Петербургский национальный исследовательский университет}\\
+		\hspace{-1cm} \rule{13cm}{1pt}\\[5pt]
+		\hspace{-1cm} \textbf{информационных технологий, механики и оптики}\\[10pt]
+		\hspace{-1cm} {\small \mbox{\hbox {Факультет \hfil Компьютерных \hfil технологий \hfil и \hfil управления}}\\[-2pt]%to 9.27 cm 
+		\hspace{-1cm} Кафедра ПБКС}
 	\vfill
-	%\vspace{-1.50cm}
-		\Large \GTitle \\[0.0cm]
-		\LARGE \textbf{\GCaption}\\[1cm]
-		\Large \GGTitle \\[0.0cm]
-		\LARGE \textbf{\GGCaption}\\
+	\vspace{-1.50cm}
+		\hspace{-1cm} \Large \GTitle \\[0.0cm]
+		\hspace{-1cm} \LARGE \textbf{\GCaption}\\[1cm]
+		\hspace{-1cm} \Large \GGTitle \\[0.0cm]
+		\hspace{-1cm} \LARGE \textbf{\GGCaption}\\
 	\vfill
 	\end{center}
-
-	\hspace{-0.35cm}
-	\vbox{\begin{tabbing}
-	Выполнилм \=\hspace{12.10cm}\=\hspace{1.5cm}\kill
-	Выполнил:\>\GAuthor\>\rule{1.5cm}{0.0pt}\\
-	Проверил:\>\GReviewer\>\rule{1.5cm}{0.0pt}\\
-	\end{tabbing}
-	\vspace{-1.50cm}}
+	
+	%\hspace{-1.125cm}
+	%\vbox{\begin{tabbing}
+	%Выполнилм \=\hspace{12.10cm}\=\hspace{1.5cm}\kill
+	%Выполнил:\>\GAuthor\>\rule{1.5cm}{0.0pt}\\
+	%Проверил:\>\GReviewer\>\rule{1.5cm}{0.0pt}\\
+	%\end{tabbing}
+	%\vspace{-1.25cm}}
 	\pagebreak
 	\end{titlepage}
 	\setcounter{page}{2}
 }
-
+\usepackage{tocloft}
 \newcommand{\maketoc}{
-\renewcommand{\@dotsep}{10000}
 
 
+\renewcommand{\cftbeforetoctitleskip}{-2cm}
+\renewcommand{\cftaftertoctitleskip}{0cm}
+\renewcommand{\cftparskip}{0cm}
+\renewcommand{\cftbeforesecskip}{0.5cm}
+\renewcommand{\cftbeforesubsecskip}{0.5cm}
+\renewcommand{\cftbeforesubsubsecskip}{0.25cm}
+\renewcommand{\cftbeforeparaskip}{0.10cm}
+\renewcommand{\cftbeforesubparaskip}{0.10cm}
+\cftpagenumbersoff{paragraph}
+\renewcommand{\cftsecfont}{\bfseries\Large}
+\renewcommand{\cftsecpagefont}{\bfseries}
+\renewcommand{\cftsubsecfont}{\large}
+\renewcommand{\cftsecindent}{0cm}
+\renewcommand{\cftsubsecindent}{0cm}
+\renewcommand{\cftsubsubsecindent}{1cm}
+\renewcommand{\cftparaindent}{2cm}
+\renewcommand{\cftsubparaindent}{2cm}
+\renewcommand{\cftdotsep}{\cftnodots}
+\setcounter{tocdepth}{3}
+\renewcommand\contentsname{\protect\section{Содержание}\relax}
 \tableofcontents
+\vfill
 \pagebreak
 }
 % Common settings
 \parskip = \bigskipamount
-\parindent=-0.50cm
+\parindent=-0cm
 %\hfuzz=2.5pt
 %\emergencystretch=25pt
 %\tolerance 5000
 %\renewcommand{\baselinestretch}{1.25}
 
-\setcounter{tocdepth}{4}
 \setcounter{secnumdepth}{0}
 
 % Margins - a4paper 210x297
 \hoffset = -1in
 \voffset = -1in
-\topmargin = 1.5 cm
-\textheight = 26cm
-\textwidth = 15cm
+\topmargin = 1.5cm
 \headheight = 0pt
 \headsep = 0pt
-\oddsidemargin = 4cm
-\evensidemargin = 2.80cm
-%\usepackage{geometry}
-%\geometry{left=3.00cm}
-%\geometry{right=2.00cm}
-%\geometry{top=1.75cm}
-%\geometry{bottom=1.75cm}
+\textheight = 26.5cm
+\footskip = 0.75cm
+\textwidth = 16cm
+\oddsidemargin = 3.5cm
+\evensidemargin = 2.5cm
 
+
+%\hoffset = -1in
+%\voffset = -1in
+%\topmargin = 1.5cm
+%\headheight = 0pt
+%\headsep = 0pt
+%\textheight = 26.5cm
+%\footskip = 0.75cm
+%\textwidth = 15.5cm
+%\oddsidemargin = 4cm
+%\evensidemargin = 3cm
+
+%\usepackage{hyperref}
+
+\usepackage{enumitem}
+\setlist[itemize,enumerate]{leftmargin=*,labelsep = 0.3cm,itemsep=0.25cm,topsep=0cm}
 
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrule}{}
-\renewcommand{\footrule}{\vbox to 0pt{ \hbox to \headwidth{\hspace{-0.90cm}{\leaders\hrule height 1pt \hfill}\hspace{-0.125cm}} \vss}}
+\renewcommand{\footrule}{\vbox to 0pt{ \hbox to \headwidth{\hspace{-1.15cm}{\leaders\hrule height 1pt \hfill}\hspace{-0.125cm}} \vss}}
 \fancyfoot[RO]{\thepage}
-\fancyfoot[LE]{\hspace{-0.75cm}\thepage}
+%\fancyfoot[LE]{\hspace{-1.5cm}\thepage}
+\fancyfoot[LE]{\hspace{-1cm}\thepage}
 \fancypagestyle{plain}{\fancyhead{} \renewcommand{\headrule}{}}
-\fancypagestyle{title}{\fancyhf{} \renewcommand{\headrule}{} \fancyfoot[R]{Санкт-Петербург, 2013}\fancyfoot[L]{\hspace{-0.75cm}\small\fontspec{Times New Roman}\raisebox{2pt}{\XeTeX}}}
+%\fancypagestyle{title}{\fancyhf{} \renewcommand{\headrule}{} \fancyfoot[R]{Санкт-Петербург, 2013}\fancyfoot[L]{\hspace{-1.5cm}\small\fontspec{Times New Roman}\raisebox{2pt}{\XeTeX}}}
+\fancypagestyle{title}{\fancyhf{} \renewcommand{\headrule}{} \fancyfoot[R]{Санкт-Петербург, 2013}\fancyfoot[L]{\hspace{-1cm}\small\fontspec{Times New Roman}\raisebox{2pt}{\XeTeX}}}
 
 \usepackage{titlesec}
 \titleformat{\section}[block]{\bfseries\huge}{\arabic{section}.}{1ex}{}
-\titleformat{\subsection}[block]{\bfseries\LARGE}{\arabic{section}.\arabic{subsection}.}{1ex}{}
-\titleformat{\subsubsection}[block]{\Large}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.}{1ex}{}
+\titleformat{\subsection}[block]{\bfseries\Large}{\arabic{section}.\arabic{subsection}.}{1ex}{}
+\titleformat{\subsubsection}[block]{\large}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.}{1ex}{}
 \titleformat{\paragraph}[block]{\large}{}{1ex}{}
 \titleformat{\subparagraph}[block]{\large}{}{1ex}{}
-\titlespacing*{\section}{-0.75cm}{3.25ex plus 1ex minus .2ex}{2.3ex plus .2ex}
-\titlespacing*{\subsection}{-0.75cm}{3.25ex plus 1ex minus .2ex}{0.0ex plus .2ex}
-\titlespacing*{\subsubsection}{-0.75cm}{3.0ex plus 1ex minus .2ex}{0.0ex plus .2ex}
-\titlespacing*{\paragraph}{-0.75cm}{3.0ex plus 1ex minus .2ex}{0.0ex plus .2ex}
-\titlespacing*{\subparagraph}{-0.75cm}{3.0ex plus 1ex minus .2ex}{0.0ex plus .2ex}
+%\titlespacing*{\section}{-1.5cm}{3.25ex plus 1ex minus .2ex}{0.0ex plus .2ex}
+%\titlespacing*{\subsection}{-1.5cm}{3.25ex plus 1ex minus .2ex}{0.0ex plus .2ex}
+%\titlespacing*{\subsubsection}{-1.5cm}{3.0ex plus 1ex minus .2ex}{0.0ex plus .2ex}
+%\titlespacing*{\paragraph}{-1.5cm}{3.0ex plus 1ex minus .2ex}{0.0ex plus .2ex}
+%\titlespacing*{\subparagraph}{-1.5cm}{3.0ex plus 1ex minus .2ex}{0.0ex plus .2ex}
+\titlespacing*{\section}{-1cm}{3.25ex plus 1ex minus .2ex}{0.0ex plus .2ex}
+\titlespacing*{\subsection}{-1cm}{3.25ex plus 1ex minus .2ex}{0.0ex plus .2ex}
+\titlespacing*{\subsubsection}{-1cm}{3.0ex plus 1ex minus .2ex}{0.0ex plus .2ex}
+\titlespacing*{\paragraph}{-1cm}{3.0ex plus 1ex minus .2ex}{0.0ex plus .2ex}
+\titlespacing*{\subparagraph}{-1cm}{3.0ex plus 1ex minus .2ex}{0.0ex plus .2ex}
 
 \renewcommand{\theenumi}{\arabic{enumi}}
 \renewcommand{\labelenumi}{\arabic{enumi}.}
